@@ -12,6 +12,8 @@ namespace ShootEm_Up
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Player myPlayer;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -27,7 +29,6 @@ namespace ShootEm_Up
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -39,6 +40,8 @@ namespace ShootEm_Up
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            myPlayer = new Player(Content.Load<Texture2D>("Test"));
 
             // TODO: use this.Content to load your game content here
         }
@@ -62,8 +65,10 @@ namespace ShootEm_Up
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
 
+
+            // TODO: Add your update logic here
+            myPlayer.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -73,10 +78,12 @@ namespace ShootEm_Up
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            myPlayer.Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
