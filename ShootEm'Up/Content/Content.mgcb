@@ -13,6 +13,11 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Disney's Frozen - Olaf Nose Bump.mp4
+/importer:H264Importer
+/processor:VideoProcessor
+/build:Disney's Frozen - Olaf Nose Bump.mp4;OlafNose
+
 #begin pixil-frame-0 (2).png
 /importer:TextureImporter
 /processor:TextureProcessor

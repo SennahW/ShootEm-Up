@@ -38,7 +38,6 @@ namespace ShootEm_Up
 
         public void Shoot()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

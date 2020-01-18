@@ -4,9 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Johannnes/Documents/GitHub/ShootEm-Up/ShootEm'Up/Content/Disney's Frozen - Olaf Nose Bump.mp4</File>
     <File>C:/Users/Johannnes/Documents/GitHub/ShootEm-Up/ShootEm'Up/Content/pixil-frame-0 (2).png</File>
   </SourceFiles>
   <DestFiles>
+    <File>OlafNose</File>
     <File>Test.png</File>
   </DestFiles>
 </SourceFileCollection>

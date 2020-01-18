@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using System.Threading;
 
 namespace ShootEm_Up
 {
@@ -9,10 +11,20 @@ namespace ShootEm_Up
     /// </summary>
     public class Game1 : Game
     {
+        public enum GameState { Intro, Running, GameOver};
+
+        GameState myGameState;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
         Player myPlayer;
+
+        Texture2D myVideoTexture;
+        Video myVideo;
+        VideoPlayer myVideoPlayer;
+
+
+        bool tempRanVideo;
 
         public Game1()
         {
@@ -29,6 +41,8 @@ namespace ShootEm_Up
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            myGameState = GameState.Intro;
+            graphics.ToggleFullScreen();
             base.Initialize();
         }
 
@@ -40,9 +54,12 @@ namespace ShootEm_Up
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            myVideo = Content.Load<Video>("OlafNose");
+            myVideoPlayer = new VideoPlayer();
             myPlayer = new Player(Content.Load<Texture2D>("Test"));
 
+            myVideoPlayer.Play(myVideo);
+            
             // TODO: use this.Content to load your game content here
         }
 
@@ -65,6 +82,21 @@ namespace ShootEm_Up
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            if (myGameState == GameState.Intro)
+            {
+                if (myVideoPlayer.State == MediaState.Stopped)
+                {
+                    myGameState = GameState.Running;
+                }
+            }
+            else if (myGameState == GameState.Running)
+            {
+
+            }
+            else if (myGameState == GameState.GameOver)
+            {
+
+            }
 
 
             // TODO: Add your update logic here
@@ -81,8 +113,29 @@ namespace ShootEm_Up
             spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
-            myPlayer.Draw(spriteBatch);
+
+            if (myGameState == GameState.Intro)
+            {
+                if (myVideoPlayer.State != MediaState.Stopped)
+                {
+                    myVideoTexture = myVideoPlayer.GetTexture();
+                }
+
+                if (myVideoTexture != null)
+                {
+                    spriteBatch.Draw(myVideoTexture, GraphicsDevice.Viewport.Bounds, Color.White);
+                }
+            }
+            else if (myGameState == GameState.Running)
+            {
+                myPlayer.Draw(spriteBatch);
+            }
+            else if (myGameState == GameState.GameOver)
+            {
+
+            }
+
+
             spriteBatch.End();
             base.Draw(gameTime);
         }

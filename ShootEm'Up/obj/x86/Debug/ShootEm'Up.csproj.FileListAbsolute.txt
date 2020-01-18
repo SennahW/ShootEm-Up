@@ -46,3 +46,5 @@ C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.pdb
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\pixil-frame-0 (2).xnb
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Test.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Disney's Frozen - Olaf Nose Bump.mp4
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\OlafNose.xnb
