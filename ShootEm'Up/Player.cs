@@ -9,15 +9,13 @@ using System.Text;
 
 namespace ShootEm_Up
 {
-    public class Player
+    public class Player : Object
     {
         float myHealth;
         Vector2 myPosition;
-        Texture2D myTexture;
 
-        public Player(Texture2D aTexture)
+        public Player()
         {
-            myTexture = aTexture;
             myPosition = new Vector2(0f, 0f);
         }
 
@@ -26,11 +24,6 @@ namespace ShootEm_Up
             Movement();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(myTexture, myPosition, null, Color.White);
-        }
-        
         public void Movement()
         {
             

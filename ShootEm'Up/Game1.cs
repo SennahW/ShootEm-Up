@@ -42,7 +42,10 @@ namespace ShootEm_Up
         {
             // TODO: Add your initialization logic here
             myGameState = GameState.Intro;
-            graphics.ToggleFullScreen();
+            graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+            graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+            graphics.IsFullScreen = true;
+            graphics.ApplyChanges();
             base.Initialize();
         }
 
