@@ -4,12 +4,10 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Programmering/ShootEm'Up/ShootEm-Up/ShootEm'Up/Content/2.png</File>
     <File>C:/Programmering/ShootEm'Up/ShootEm-Up/ShootEm'Up/Content/Disney's Frozen - Olaf Nose Bump.mp4</File>
     <File>C:/Programmering/ShootEm'Up/ShootEm-Up/ShootEm'Up/Content/Olaf.png</File>
   </SourceFiles>
   <DestFiles>
-    <File>TIle</File>
     <File>OlafNose</File>
     <File>Olaf</File>
   </DestFiles>

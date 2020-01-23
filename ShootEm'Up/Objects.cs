@@ -12,6 +12,5 @@ namespace ShootEm_Up
     {
         Texture2D myTexture;
 
-
     }
 }

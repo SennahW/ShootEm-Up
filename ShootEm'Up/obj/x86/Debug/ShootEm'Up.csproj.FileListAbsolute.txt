@@ -48,3 +48,31 @@ C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Test.xnb
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Disney's Frozen - Olaf Nose Bump.mp4
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\OlafNose.xnb
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.csprojAssemblyReference.cache
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.csproj.CoreCompileInputs.cache
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.exe
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.pdb
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Disney's Frozen - Olaf Nose Bump.mp4
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\pixil-frame-0 (2).xnb
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\OlafNose.xnb
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\ShootEm'Up.exe
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\ShootEm'Up.pdb
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.dll
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.xml
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.csproj.CopyComplete
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Olaf.xnb
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\TIle.xnb

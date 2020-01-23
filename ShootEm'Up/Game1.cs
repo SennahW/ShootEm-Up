@@ -6,12 +6,12 @@ using System.Threading;
 
 namespace ShootEm_Up
 {
+    public enum GameState { Intro, Running, GameOver };
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
     {
-        public enum GameState { Intro, Running, GameOver};
 
         GameState myGameState;
         GraphicsDeviceManager graphics;
@@ -23,6 +23,8 @@ namespace ShootEm_Up
         Video myVideo;
         VideoPlayer myVideoPlayer;
 
+        Texture2D myOlafTexture;
+        Texture2D myTestTile;
 
         bool tempRanVideo;
 
@@ -44,8 +46,9 @@ namespace ShootEm_Up
             myGameState = GameState.Intro;
             graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
             graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
-            graphics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
             graphics.ApplyChanges();
+
             base.Initialize();
         }
 
@@ -59,10 +62,12 @@ namespace ShootEm_Up
             spriteBatch = new SpriteBatch(GraphicsDevice);
             myVideo = Content.Load<Video>("OlafNose");
             myVideoPlayer = new VideoPlayer();
-            myPlayer = new Player(Content.Load<Texture2D>("Test"));
+            myOlafTexture = Content.Load<Texture2D>("Olaf");
+            myTestTile = Content.Load<Texture2D>("Tile");
+            myPlayer = new Player(myOlafTexture);
 
             myVideoPlayer.Play(myVideo);
-            
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -91,6 +96,11 @@ namespace ShootEm_Up
                 {
                     myGameState = GameState.Running;
                 }
+                if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                {
+                    myVideoPlayer.Stop();
+                    myGameState = GameState.Running;
+                }
             }
             else if (myGameState == GameState.Running)
             {
@@ -103,7 +113,7 @@ namespace ShootEm_Up
 
 
             // TODO: Add your update logic here
-            myPlayer.Update(gameTime);
+            myPlayer.Update(gameTime, myGameState);
             base.Update(gameTime);
         }
 
@@ -132,6 +142,9 @@ namespace ShootEm_Up
             else if (myGameState == GameState.Running)
             {
                 myPlayer.Draw(spriteBatch);
+                spriteBatch.Draw(myTestTile, new Vector2(GraphicsDevice.DisplayMode.Width / 2, GraphicsDevice.DisplayMode.Height / 2), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+                spriteBatch.Draw(myTestTile, new Vector2(GraphicsDevice.DisplayMode.Width / 2 + 128, GraphicsDevice.DisplayMode.Height / 2), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+
             }
             else if (myGameState == GameState.GameOver)
             {
