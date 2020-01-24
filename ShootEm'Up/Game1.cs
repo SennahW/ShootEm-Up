@@ -23,6 +23,7 @@ namespace ShootEm_Up
         Video myVideo;
         VideoPlayer myVideoPlayer;
         TileMap myTileMap;
+        Texture2D myBackgroundTexture;
 
         Texture2D myOlafTexture;
         Texture2D myTestTile;
@@ -67,13 +68,18 @@ namespace ShootEm_Up
             myOlafTexture = Content.Load<Texture2D>("Olaf");
             myTestTile = Content.Load<Texture2D>("Tile");
             myPlayer = new Player(myOlafTexture);
-            myTileMap = new TileMap(Content.Load<Texture2D>("Tile1"), Content.Load<Texture2D>("Tile2"), null, null, null, null);
+            myBackgroundTexture = Content.Load<Texture2D>("Background");
+            myTileMap = new TileMap(Content.Load<Texture2D>("Tile1"), Content.Load<Texture2D>("Tile2"), Content.Load<Texture2D>("Tile3"), Content.Load<Texture2D>("Tile4"), Content.Load<Texture2D>("Tile5"), 
+                Content.Load<Texture2D>("Tile6"), Content.Load<Texture2D>("Tile7"), Content.Load<Texture2D>("Tile8"), Content.Load<Texture2D>("Tile9"), Content.Load<Texture2D>("Tile10"), 
+                Content.Load<Texture2D>("Tile11"), Content.Load<Texture2D>("Tile12"), Content.Load<Texture2D>("Tile13"), Content.Load<Texture2D>("Tile14"), Content.Load<Texture2D>("Tile15"), 
+                Content.Load<Texture2D>("Tile16"), Content.Load<Texture2D>("Tile17"), Content.Load<Texture2D>("Tile18"));
             myTileMap.Initialize();
 
 
             myVideoPlayer.Play(myVideo);
 
             // TODO: use this.Content to load your game content here
+            //"),  Content.Load<Texture2D>("Tile
         }
 
         /// <summary>
@@ -146,8 +152,11 @@ namespace ShootEm_Up
             }
             else if (myGameState == GameState.Running)
             {
+                spriteBatch.Draw(myBackgroundTexture, new Vector2(0, 0), null, Color.White, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 0f);
+
                 myPlayer.Draw(spriteBatch);
                 myTileMap.Draw(spriteBatch);
+
             }
             else if (myGameState == GameState.GameOver)
             {
