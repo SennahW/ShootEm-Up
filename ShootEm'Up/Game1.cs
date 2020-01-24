@@ -153,10 +153,8 @@ namespace ShootEm_Up
             else if (myGameState == GameState.Running)
             {
                 spriteBatch.Draw(myBackgroundTexture, new Vector2(0, 0), null, Color.White, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 0f);
-
-                myPlayer.Draw(spriteBatch);
                 myTileMap.Draw(spriteBatch);
-
+                myPlayer.Draw(spriteBatch);
             }
             else if (myGameState == GameState.GameOver)
             {

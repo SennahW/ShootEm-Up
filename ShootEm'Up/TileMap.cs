@@ -10,6 +10,7 @@ namespace ShootEm_Up
 
     class TileMap
     {
+        //Texure declerations
         Texture2D myTextureTile1;
         Texture2D myTextureTile2;
         Texture2D myTextureTile3;
