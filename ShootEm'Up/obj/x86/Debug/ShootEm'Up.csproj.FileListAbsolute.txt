@@ -76,3 +76,5 @@ C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\SharpDX.
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.csproj.CopyComplete
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Olaf.xnb
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\TIle.xnb
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile2.xnb
+C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile1.xnb

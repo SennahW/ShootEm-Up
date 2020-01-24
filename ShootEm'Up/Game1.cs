@@ -22,6 +22,7 @@ namespace ShootEm_Up
         Texture2D myVideoTexture;
         Video myVideo;
         VideoPlayer myVideoPlayer;
+        TileMap myTileMap;
 
         Texture2D myOlafTexture;
         Texture2D myTestTile;
@@ -49,6 +50,7 @@ namespace ShootEm_Up
             //graphics.IsFullScreen = true;
             graphics.ApplyChanges();
 
+
             base.Initialize();
         }
 
@@ -65,6 +67,9 @@ namespace ShootEm_Up
             myOlafTexture = Content.Load<Texture2D>("Olaf");
             myTestTile = Content.Load<Texture2D>("Tile");
             myPlayer = new Player(myOlafTexture);
+            myTileMap = new TileMap(Content.Load<Texture2D>("Tile1"), Content.Load<Texture2D>("Tile2"), null, null, null, null);
+            myTileMap.Initialize();
+
 
             myVideoPlayer.Play(myVideo);
 
@@ -142,9 +147,7 @@ namespace ShootEm_Up
             else if (myGameState == GameState.Running)
             {
                 myPlayer.Draw(spriteBatch);
-                spriteBatch.Draw(myTestTile, new Vector2(GraphicsDevice.DisplayMode.Width / 2, GraphicsDevice.DisplayMode.Height / 2), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-                spriteBatch.Draw(myTestTile, new Vector2(GraphicsDevice.DisplayMode.Width / 2 + 128, GraphicsDevice.DisplayMode.Height / 2), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-
+                myTileMap.Draw(spriteBatch);
             }
             else if (myGameState == GameState.GameOver)
             {
