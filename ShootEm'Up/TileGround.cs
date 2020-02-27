@@ -1,18 +1,30 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using System;
 
 namespace ShootEm_Up
 {
-    class Collisions
+    class TileGround : Tile
     {
-        bool myPlayerIsGrounded = false;
-        public void Update (GameTime gameTime, Player aPlayer, Tile[,] aTileArray)
+        public TileGround(Texture2D aTexture, TileType aTileType, Vector2 aPosistion, float aTileID)
         {
-            PlatformCollsion(aPlayer, aTileArray);
+            myTexture = aTexture;
+            myTileType = aTileType;
+            myPosition = aPosistion;
+            myRectangle = new Rectangle(Convert.ToInt32(myPosition.X), Convert.ToInt32(myPosition.Y), myTexture.Width, myTexture.Height);
+            myTileID = aTileID;
         }
 
-        public void PlatformCollsion (Player aPlayer, Tile[,] aTileArray)
-        { 
+        bool myPlayerIsGrounded = false;
+
+        public void Update(GameTime gameTime, Player aPlayer, Tile[,] aTileArray)
+        {
+            TileCollsion(aPlayer, aTileArray);
+
+        }
+        
+        public void TileCollsion(Player aPlayer, Tile[,] aTileArray)
+        {
             myPlayerIsGrounded = false;
             bool tempRunOnceperUpdate = false;
 
@@ -20,14 +32,14 @@ namespace ShootEm_Up
             {
                 for (int x = 0; x < aTileArray.GetLength(1); x++)
                 {
-                    if (aTileArray[y,x].AccessTileType == TileType.Solid)
+                    if (aTileArray[y, x].AccessTileType == TileType.Solid)
                     {
 
                         if (aTileArray[y, x].AccessFloat != 17f)
                         {
-                            if (aPlayer.AccessRectangle.Intersects(aTileArray[y,x].AccessRectangle))
+                            if (aPlayer.AccessRectangle.Intersects(aTileArray[y, x].AccessRectangle))
                             {
-                                
+
                                 //aPlayer.AccessVelocity = new Vector2(aPlayer.AccessVelocity.X, 0);
                                 myPlayerIsGrounded = true;
                             }
@@ -54,6 +66,5 @@ namespace ShootEm_Up
         }
 
         public bool AccessGroundBool { get => myPlayerIsGrounded; set => myPlayerIsGrounded = value; }
-
     }
 }

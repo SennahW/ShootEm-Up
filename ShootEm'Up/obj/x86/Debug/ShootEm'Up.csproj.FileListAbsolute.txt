@@ -45,7 +45,6 @@ C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.exe
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.pdb
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\pixil-frame-0 (2).xnb
-C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Test.xnb
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Disney's Frozen - Olaf Nose Bump.mp4
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\OlafNose.xnb
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.csprojAssemblyReference.cache
@@ -94,3 +93,24 @@ C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile8.xnb
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile9.xnb
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Background.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\TIle.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Background.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Olaf.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile1.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile10.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile11.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile12.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile13.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile14.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile15.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile16.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile17.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile18.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile2.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile3.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile4.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile5.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile6.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile7.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile8.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile9.xnb

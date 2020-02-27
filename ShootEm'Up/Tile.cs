@@ -2,24 +2,17 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
+
 namespace ShootEm_Up
 {
     class Tile
     {
-        Texture2D myTexture;
-        TileType myTileType;
-        Vector2 myPosition;
-        Rectangle myRectangle;
-        float myTileID;
+        protected Texture2D myTexture;
+        protected TileType myTileType;
+        protected Vector2 myPosition;
+        protected Rectangle myRectangle;
+        protected float myTileID;
 
-        public Tile(Texture2D aTexture, TileType aTileType, Vector2 aPosistion, float aTileID)
-        {
-            myTexture = aTexture;
-            myTileType = aTileType;
-            myPosition = aPosistion;
-            myRectangle = new Rectangle(Convert.ToInt32(myPosition.X), Convert.ToInt32(myPosition.Y), myTexture.Width, myTexture.Height);
-            myTileID = aTileID;
-        }
 
         public void Draw(SpriteBatch spriteBatch)
         {

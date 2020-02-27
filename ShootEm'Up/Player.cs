@@ -13,6 +13,8 @@ namespace ShootEm_Up
         Vector2 myPosition;
         Vector2 myVelocity;
         float myGameTime;
+        bool myJumpingFlag;
+        float myJumpValue;
 
         Input myInput;
         KeyboardState myCurrentKey;
@@ -61,11 +63,21 @@ namespace ShootEm_Up
                 myVelocity.X -= 1f * myGameTime;
             }
 
-            if (myCurrentKey.IsKeyDown(myInput.Jump) && aGroundBool == true)
+            if (myCurrentKey.IsKeyDown(myInput.Jump) && aGroundBool == true && myJumpingFlag == false)
             {
-                myVelocity.Y -= 20f * myGameTime;
+                myJumpValue = -300;
+                myJumpingFlag = true;
             }
-            
+
+            if (myJumpingFlag)
+            {
+                myVelocity.Y += myJumpValue;
+                myJumpValue += 1;
+                if (aGroundBool == true)
+                {
+                    myJumpingFlag = false;
+                }
+            }
         }
 
         public void Shoot()
