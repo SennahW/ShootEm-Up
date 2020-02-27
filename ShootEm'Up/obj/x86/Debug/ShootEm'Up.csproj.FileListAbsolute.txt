@@ -49,7 +49,6 @@ C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Disney's Frozen - Olaf Nose Bump.mp4
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\OlafNose.xnb
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.csprojAssemblyReference.cache
-C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.csproj.CoreCompileInputs.cache
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.exe
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\obj\x86\Debug\ShootEm'Up.pdb
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Disney's Frozen - Olaf Nose Bump.mp4

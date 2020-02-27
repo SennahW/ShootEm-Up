@@ -10,7 +10,6 @@ namespace ShootEm_Up
 {
     public class Objects
     {
-        Texture2D myTexture;
 
     }
 }
