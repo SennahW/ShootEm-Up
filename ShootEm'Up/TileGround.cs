@@ -15,9 +15,7 @@ namespace ShootEm_Up
             myTileID = aTileID;
         }
 
-        bool myPlayerIsGrounded = false;
-
-        public void Update(GameTime gameTime, Player aPlayer, Tile[,] aTileArray)
+        public override void Update(Player aPlayer, Tile[,] aTileArray)
         {
             TileCollsion(aPlayer, aTileArray);
 
@@ -25,8 +23,7 @@ namespace ShootEm_Up
         
         public void TileCollsion(Player aPlayer, Tile[,] aTileArray)
         {
-            myPlayerIsGrounded = false;
-            bool tempRunOnceperUpdate = false;
+            aPlayer.AccessGroundBool = false;
 
             for (int y = 0; y < aTileArray.GetLength(0); y++)
             {
@@ -41,30 +38,22 @@ namespace ShootEm_Up
                             {
 
                                 //aPlayer.AccessVelocity = new Vector2(aPlayer.AccessVelocity.X, 0);
-                                myPlayerIsGrounded = true;
+                                aPlayer.AccessGroundBool = true;
                             }
                         }
                     }
-                    if (myPlayerIsGrounded == true)
-                    {
-                        if (aPlayer.AccessRectangle.Left < aTileArray[y, x].AccessRectangle.Right && aPlayer.AccessRectangle.Right < aTileArray[y, x].AccessRectangle.Left)
-                        {
-                            if (tempRunOnceperUpdate == false)
-                            {
-                                aPlayer.AccessVelocity = new Vector2(0, -10);
-                            }
-                        }
-                    }
+                    //if (myPlayerIsGrounded == true)
+                    //{
+                    //    if (aPlayer.AccessRectangle.Left < aTileArray[y, x].AccessRectangle.Right && aPlayer.AccessRectangle.Right < aTileArray[y, x].AccessRectangle.Left)
+                    //    {
+                    //        if (tempRunOnceperUpdate == false)
+                    //        {
+                    //            aPlayer.AccessVelocity = new Vector2(0, -10);
+                    //        }
+                    //    }
+                    //}
                 }
             }
-
-            if (myPlayerIsGrounded == false)
-            {
-                aPlayer.AccessVelocity += new Vector2(0, 4);
-            }
-
         }
-
-        public bool AccessGroundBool { get => myPlayerIsGrounded; set => myPlayerIsGrounded = value; }
     }
 }

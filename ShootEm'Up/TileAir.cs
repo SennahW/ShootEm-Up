@@ -16,7 +16,7 @@ namespace ShootEm_Up
         }
 
         bool myPlayerIsGrounded = false;
-        public void Update(GameTime gameTime, Player aPlayer, Tile[,] aTileArray)
+        public void Update(Player aPlayer, Tile[,] aTileArray)
         {
         }
         public bool AccessGroundBool { get => myPlayerIsGrounded; set => myPlayerIsGrounded = value; }

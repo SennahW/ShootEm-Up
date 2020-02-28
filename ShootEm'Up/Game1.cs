@@ -105,7 +105,7 @@ namespace ShootEm_Up
                 CheckBackground();
                 myPlayer.Update(gameTime, myGameState, myCollisions.AccessGroundBool);
 
-                myTileMap.Update(myPlayer)
+                myTileMap.Update(myPlayer);
 
                 for (int i = 0; i < myBackgroundList.Count; i++)
                 {

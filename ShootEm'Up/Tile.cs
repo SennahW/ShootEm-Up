@@ -13,8 +13,12 @@ namespace ShootEm_Up
         protected Rectangle myRectangle;
         protected float myTileID;
 
+        public virtual void Update(Player aPlayer, Tile[,] aTileArray)
+        {
 
-        public void Draw(SpriteBatch spriteBatch)
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             if (myTileType != TileType.Gas)
             {

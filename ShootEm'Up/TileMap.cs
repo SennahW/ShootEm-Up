@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System;
 using System.Threading;
 
 namespace ShootEm_Up
@@ -37,7 +38,7 @@ namespace ShootEm_Up
             { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
             { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
             { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
-            { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
+            { 17, 17, 17, 17,  8, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
             { 17, 17, 17, 17, 17, 17, 17, 13, 14, 14, 15, 17, 17, 17, 17, 17, 17 },
             {  1,  1,  1,  1,  1,  2, 17, 17, 17, 17, 17, 17, 17, 13, 14, 14, 15 },
             {  4,  4,  4,  4,  4,  5, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
@@ -161,10 +162,14 @@ namespace ShootEm_Up
 
         public void Update(Player aPlayer)
         {
-            for (int i = 0; i < myMapLevelOne.Length; i++)
+            for (int y = 0; y < 10; y++)
             {
-                Update( aPlayer, myMapLevelOne);
+                for (int x = 0; x < 17; x++)
+                {
+                    myMapLevelOne[y,x].Update(aPlayer, myMapLevelOne);
+                }
             }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)
