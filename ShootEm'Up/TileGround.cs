@@ -20,39 +20,12 @@ namespace ShootEm_Up
             TileCollsion(aPlayer, aTileArray);
 
         }
-        
+
         public void TileCollsion(Player aPlayer, Tile[,] aTileArray)
         {
-            aPlayer.AccessGroundBool = false;
-
-            for (int y = 0; y < aTileArray.GetLength(0); y++)
+            if (aPlayer.AccessRectangle.Intersects(myRectangle))
             {
-                for (int x = 0; x < aTileArray.GetLength(1); x++)
-                {
-                    if (aTileArray[y, x].AccessTileType == TileType.Solid)
-                    {
-
-                        if (aTileArray[y, x].AccessFloat != 17f)
-                        {
-                            if (aPlayer.AccessRectangle.Intersects(aTileArray[y, x].AccessRectangle))
-                            {
-
-                                //aPlayer.AccessVelocity = new Vector2(aPlayer.AccessVelocity.X, 0);
-                                aPlayer.AccessGroundBool = true;
-                            }
-                        }
-                    }
-                    //if (myPlayerIsGrounded == true)
-                    //{
-                    //    if (aPlayer.AccessRectangle.Left < aTileArray[y, x].AccessRectangle.Right && aPlayer.AccessRectangle.Right < aTileArray[y, x].AccessRectangle.Left)
-                    //    {
-                    //        if (tempRunOnceperUpdate == false)
-                    //        {
-                    //            aPlayer.AccessVelocity = new Vector2(0, -10);
-                    //        }
-                    //    }
-                    //}
-                }
+                aPlayer.AccessGroundBool = true;
             }
         }
     }

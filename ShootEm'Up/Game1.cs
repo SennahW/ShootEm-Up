@@ -7,12 +7,14 @@ using System.Collections.Generic;
 namespace ShootEm_Up
 {
     public enum GameState { Intro, Running, GameOver };
+    public enum Level { One, Two, Three };
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
     {
         GameState myGameState;
+        Level myLevel = Level.One;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Camera myCamera;
@@ -87,6 +89,10 @@ namespace ShootEm_Up
             {
                 Exit();
             }
+            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
+                myLevel = Level.Two;
+            }
 
             if (myGameState == GameState.Intro)
             {
@@ -105,7 +111,7 @@ namespace ShootEm_Up
                 CheckBackground();
                 myPlayer.Update(gameTime, myGameState, myCollisions.AccessGroundBool);
 
-                myTileMap.Update(myPlayer);
+                myTileMap.Update(myPlayer, myLevel);
 
                 for (int i = 0; i < myBackgroundList.Count; i++)
                 {
@@ -123,8 +129,6 @@ namespace ShootEm_Up
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-
-
             if (myGameState == GameState.Intro)
             {
                 spriteBatch.Begin();
@@ -151,7 +155,7 @@ namespace ShootEm_Up
                     myBackgroundList[i].Draw(spriteBatch);
                 }
 
-                myTileMap.Draw(spriteBatch);
+                myTileMap.Draw(spriteBatch, myLevel);
                 myPlayer.Draw(spriteBatch);
 
             }
@@ -161,7 +165,6 @@ namespace ShootEm_Up
                 GraphicsDevice.Clear(Color.CornflowerBlue);
 
             }
-
 
             spriteBatch.End();
             base.Draw(gameTime);

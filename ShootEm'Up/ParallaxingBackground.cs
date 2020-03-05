@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.Diagnostics;
 
 namespace ShootEm_Up
 {
@@ -21,6 +22,8 @@ namespace ShootEm_Up
         public void Update()
         {
             myPosition.X -= myGame1.AccessPlayer.AccessVelocity.X * 0.1f;
+            //Debug.WriteLine(myPosition);
+            Debug.WriteLine(myGame1.AccessPlayer.AccessVelocity.X);
         } 
 
         public void Draw(SpriteBatch spriteBatch)

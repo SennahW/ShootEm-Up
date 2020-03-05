@@ -13,7 +13,7 @@ namespace ShootEm_Up
         Vector2 myPosition;
         Vector2 myVelocity;
         float myGameTime;
-        float myJumpValue;
+        float myJumpStartY;
         bool myJumpingFlag;
         bool myGroundFlag;
 
@@ -35,9 +35,9 @@ namespace ShootEm_Up
             myGameTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (aGameState == GameState.Running)
             {
+                myVelocity = new Vector2(0, 0);
                 Movement();
                 myPosition += myVelocity;
-                myVelocity = new Vector2(0, 0);
                 myRectangle = new Rectangle(Convert.ToInt32(myPosition.X), Convert.ToInt32(myPosition.Y), 90, 175);
             }
         }
@@ -66,18 +66,12 @@ namespace ShootEm_Up
 
             if (myCurrentKey.IsKeyDown(myInput.Jump) && myGroundFlag == true && myJumpingFlag == false)
             {
-                myJumpValue = -300;
                 myJumpingFlag = true;
             }
 
-            if (myJumpingFlag)
+            if (myJumpingFlag == true)
             {
-                myVelocity.Y += myJumpValue;
-                myJumpValue += 1;
-                if (myGroundFlag == true)
-                {
-                    myJumpingFlag = false;
-                }
+                Jumping();
             }
 
             if (myGroundFlag == false)
@@ -87,6 +81,11 @@ namespace ShootEm_Up
         }
 
         public void Shoot()
+        {
+
+        }
+
+        public void Jumping()
         {
         }
 
