@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Background.cs" />
     <Compile Include="BaseEnemy.cs" />
-    <Compile Include="Bullet.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Collisions.cs" />
     <Compile Include="Game1.cs" />
@@ -53,6 +52,8 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Snowball.cs" />
+    <Compile Include="SnowballManager.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileAir.cs" />
     <Compile Include="TileGround.cs" />

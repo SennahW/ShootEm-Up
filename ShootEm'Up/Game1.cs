@@ -74,6 +74,7 @@ namespace ShootEm_Up
             myBackgroundList = new List<ParallaxingBackground>();
             myBackgroundList.Add(new ParallaxingBackground(myBackgroundTexture, this, new Vector2(0, 0)));
             myEnemies = new List<BaseEnemy>();
+            SnowballManager.AccessSnowballtexture = Content.Load<Texture2D>("Snowball");
 
             myVideoPlayer.Play(myVideo);
 
@@ -92,7 +93,7 @@ namespace ShootEm_Up
             {
                 Exit();
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            if (Keyboard.GetState().IsKeyDown(Keys.P))
             {
                 myLevel = Level.Two;
                 myTileMap.SwitchMap(myLevel, myEnemies, mySvenTexture);
@@ -121,6 +122,7 @@ namespace ShootEm_Up
                 {
                     myBackgroundList[i].Update();
                 }
+                SnowballManager.Update();
             }
             else if (myGameState == GameState.GameOver)
             {
@@ -161,6 +163,7 @@ namespace ShootEm_Up
 
                 myTileMap.Draw(spriteBatch, myLevel);
                 myPlayer.Draw(spriteBatch);
+                SnowballManager.Draw(spriteBatch);
 
             }
             else if (myGameState == GameState.GameOver)

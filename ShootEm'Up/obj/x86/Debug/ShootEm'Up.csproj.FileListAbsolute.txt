@@ -115,3 +115,5 @@ C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile8.xnb
 C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Tile9.xnb
 C:\Programmering\ShootEm'Up\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Sven.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Sven.xnb
+C:\Users\Johannnes\Documents\GitHub\ShootEm-Up\ShootEm'Up\bin\Windows\x86\Debug\Content\Snowball.xnb

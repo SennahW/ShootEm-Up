@@ -70,6 +70,11 @@ namespace ShootEm_Up
                 myVelocity.X -= 1f * myGameTime;
             }
 
+            if (myCurrentKey.IsKeyDown(myInput.Shoot))
+            {
+                Shoot();
+            }
+
             if (myCurrentKey.IsKeyDown(myInput.Jump) && myGroundFlag == true && myJumpingFlag == false)
             {
                 myJumpingFlag = true;
@@ -93,12 +98,11 @@ namespace ShootEm_Up
                 myVelocity.X = 0;
                 mySideColFlag = false;
             }
-
         }
 
         public void Shoot()
         {
-
+            SnowballManager.AddSnowball(new Snowball(true, myPosition));
         }
 
 
