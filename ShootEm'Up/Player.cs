@@ -16,11 +16,16 @@ namespace ShootEm_Up
         float myJumpStartY;
         bool myJumpingFlag;
         bool myGroundFlag;
+        bool mySideColFlag;
+
+        float vi = 5;
+        float t = 100; // vi - initial velocity | t - time
 
         Input myInput;
         KeyboardState myCurrentKey;
 
         Rectangle myRectangle;
+        Rectangle myOldRectangle;
         Texture2D myTexture;
 
         public Player(Texture2D aTexture)
@@ -30,14 +35,15 @@ namespace ShootEm_Up
             myInput = new Input { Jump = Keys.W, WalkLeft = Keys.A, WalkRight = Keys.D, Shoot = Keys.Space };
         }
 
-        public void Update(GameTime gameTime, GameState aGameState, bool aGroundBool)
+        public void Update(GameTime gameTime, GameState aGameState)
         {
             myGameTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (aGameState == GameState.Running)
             {
                 myVelocity = new Vector2(0, 0);
-                Movement();
+                Movement(gameTime);
                 myPosition += myVelocity;
+                myOldRectangle = myRectangle;
                 myRectangle = new Rectangle(Convert.ToInt32(myPosition.X), Convert.ToInt32(myPosition.Y), 90, 175);
             }
         }
@@ -52,7 +58,7 @@ namespace ShootEm_Up
             spriteBatch.Draw(myTexture, new Rectangle(myRectangle.Left, myRectangle.Bottom, myRectangle.Width, 2), Color.Black); // Bottom
         }
 
-        public void Movement()
+        public void Movement(GameTime gameTime)
         {
             myCurrentKey = Keyboard.GetState();
             if (myCurrentKey.IsKeyDown(myInput.WalkRight))
@@ -67,17 +73,27 @@ namespace ShootEm_Up
             if (myCurrentKey.IsKeyDown(myInput.Jump) && myGroundFlag == true && myJumpingFlag == false)
             {
                 myJumpingFlag = true;
+                myJumpStartY = myPosition.Y;
             }
 
             if (myJumpingFlag == true)
             {
-                Jumping();
+                myVelocity.Y -= 200;
+                myJumpingFlag = false;
+                
             }
 
             if (myGroundFlag == false)
             {
                 myVelocity += new Vector2(0, 4);
             }
+
+            if (mySideColFlag)
+            {
+                myVelocity.X = 0;
+                mySideColFlag = false;
+            }
+
         }
 
         public void Shoot()
@@ -85,13 +101,12 @@ namespace ShootEm_Up
 
         }
 
-        public void Jumping()
-        {
-        }
 
         public Vector2 AccessPosition { get => myPosition; set => myPosition = value; }
         public Vector2 AccessVelocity { get => myVelocity; set => myVelocity = value; }
         public Rectangle AccessRectangle { get => myRectangle; set => myRectangle = value; }
+        public Rectangle AccessOldRectangle { get => myOldRectangle; set => myOldRectangle = value; }
         public bool AccessGroundBool { get => myGroundFlag; set => myGroundFlag = value; }
+        public bool AccessSideColBool { get => mySideColFlag; set => mySideColFlag = value; }
     }
 }

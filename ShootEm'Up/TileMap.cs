@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 namespace ShootEm_Up
 {
@@ -49,12 +49,12 @@ namespace ShootEm_Up
 
         int[,] myDesignMapLevelTwo = {
             { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
-            { 17, 17, 17,  3, 17,  3, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
-            { 17, 17, 17,  3, 17,  3, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
-            { 17, 17, 17,  3,  1,  3, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
-            { 17, 17, 17, 17, 17,  3, 17, 13, 14, 14, 15, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
+            { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
+            { 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
+            { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
+            { 17, 17, 17, 17, 17, 17, 17, 13, 14, 14, 15, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
             {  1,  1,  1,  1,  1,  2, 17, 17, 17, 17, 17, 17, 17, 13, 14, 14, 15, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
-            {  4,  4,  4,  4,  4,  5, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17,  3,  1,  1,  1,  1,  2, 17, 17 },
+            {  4,  4,  4,  4,  4,  5, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17,  0,  1,  1,  1,  1,  2, 17, 17 },
             {  4,  4,  4,  4,  4,  5, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17,  3,  4,  4,  4,  4,  5, 17, 17 },
             {  4,  4,  4,  4,  4,  5, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17,  3,  4,  4,  4,  4,  5, 17, 17 },
             {  4,  4,  4,  4,  4,  5, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17,  3,  4,  4,  4,  4,  5, 17, 17 },};
@@ -82,7 +82,7 @@ namespace ShootEm_Up
             myTextureTile18 = aTileEighteen;
         }
 
-        public void Initialize()
+        public void Initialize(List<BaseEnemy> aEnemyList)
         {
             myMapLevelOne = new Tile[myDesignMapLevelOne.GetLength(0), myDesignMapLevelOne.GetLength(1)];
             for (int y = 0; y < myDesignMapLevelOne.GetLength(0); y++)
@@ -178,6 +178,10 @@ namespace ShootEm_Up
                     {
                         myMapLevelOne[y, x] = new TileAir(myTextureTile18, TileType.Gas, new Vector2(0 + x * 128, 0 + y * 128), 17);
                     }
+                    else if (myDesignMapLevelOne[y, x] == 18)
+                    {
+                        myMapLevelOne[y, x] = new TileAir(myTextureTile18, TileType.Gas, new Vector2(0 + x * 128, 0 + y * 128), 17);
+                    }
                 }
             }
 
@@ -257,21 +261,75 @@ namespace ShootEm_Up
                     {
                         myMapLevelTwo[y, x] = new TileAir(myTextureTile18, TileType.Gas, new Vector2(0 + x * 128, 0 + y * 128), 17);
                     }
+                    else if (myDesignMapLevelOne[y, x] == 18)
+                    {
+                        myMapLevelOne[y, x] = new TileAir(myTextureTile18, TileType.Gas, new Vector2(0 + x * 128, 0 + y * 128), 17);
+                    }
+                }
+            }
+        }
+
+        public void SwitchMap(Level aNewLevel, List<BaseEnemy> aEnemyList, Texture2D aEnemyTexture)
+        {
+            aEnemyList.Clear();
+
+            if (aNewLevel == Level.One)
+            {
+                for (int y = 0; y < myDesignMapLevelOne.GetLength(0); y++)
+                {
+                    for (int x = 0; x < myDesignMapLevelOne.GetLength(1); x++)
+                    {
+                        if (myDesignMapLevelOne[y, x] == 18)
+                        {
+                            aEnemyList.Add(new BaseEnemy(new Vector2(128 * x, 128 * y), aEnemyTexture, 2, 4));
+                        }
+                    }
+                }
+            }
+            else if (aNewLevel == Level.Two)
+            {
+                for (int y = 0; y < myDesignMapLevelTwo.GetLength(0); y++)
+                {
+                    for (int x = 0; x < myDesignMapLevelTwo.GetLength(1); x++)
+                    {
+                        if (myDesignMapLevelTwo[y, x] == 18)
+                        {
+                            aEnemyList.Add(new BaseEnemy(new Vector2(128 * x, 128 * y), aEnemyTexture, 2, 4));
+                        }
+                    }
                 }
             }
         }
 
         public void Update(Player aPlayer, Level aLevel)
         {
-            aPlayer.AccessGroundBool = false;
-            for (int y = 0; y < myDesignMapLevelOne.GetLength(0); y++)
+            if (aLevel == Level.One)
             {
-                for (int x = 0; x < myDesignMapLevelOne.GetLength(1); x++)
+                aPlayer.AccessGroundBool = false;
+                for (int y = 0; y < myDesignMapLevelOne.GetLength(0); y++)
                 {
-                    myMapLevelOne[y,x].Update(aPlayer, myMapLevelOne);
-                    if (aPlayer.AccessGroundBool == true)
+                    for (int x = 0; x < myDesignMapLevelOne.GetLength(1); x++)
                     {
-                        break;
+                        myMapLevelOne[y, x].Update(aPlayer, myMapLevelOne);
+                        if (aPlayer.AccessGroundBool == true)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            else if (aLevel == Level.Two)
+            {
+                aPlayer.AccessGroundBool = false;
+                for (int y = 0; y < myDesignMapLevelTwo.GetLength(0); y++)
+                {
+                    for (int x = 0; x < myDesignMapLevelTwo.GetLength(1); x++)
+                    {
+                        myMapLevelTwo[y, x].Update(aPlayer, myMapLevelTwo);
+                        if (aPlayer.AccessGroundBool == true)
+                        {
+                            break;
+                        }
                     }
                 }
             }

@@ -23,7 +23,7 @@ namespace ShootEm_Up
 
         public void TileCollsion(Player aPlayer, Tile[,] aTileArray)
         {
-            if (aPlayer.AccessRectangle.Intersects(myRectangle))
+            if (aPlayer.AccessRectangle.Intersects(myRectangle) && aPlayer.AccessRectangle.Bottom < myRectangle.Bottom - 50)
             {
                 aPlayer.AccessGroundBool = true;
             }

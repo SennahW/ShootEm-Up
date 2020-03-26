@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 using System;
 
 namespace ShootEm_Up
@@ -22,15 +23,27 @@ namespace ShootEm_Up
 
         public void TileCollision(Player aPlayer, Tile[,] aTileArray)
         {
-            if (myTileType == TileType.Solid)
+            if (aPlayer.AccessRectangle.Intersects(myRectangle))
             {
-                if (myTileID != 17f)
+                //Col from left
+                if (aPlayer.AccessOldRectangle.Right < myRectangle.Left && aPlayer.AccessRectangle.Right >= myRectangle.Left)
                 {
-                myRectangle = new Rectangle(Convert.ToInt32(myPosition.X), Convert.ToInt32(myPosition.Y), 90, 175);
-                    if (new Rectangle(Convert.ToInt32(aPlayer.AccessPosition.X) + Convert.ToInt32(aPlayer.AccessVelocity.X), Convert.ToInt32(aPlayer.AccessPosition.Y), aPlayer.AccessRectangle.Width,aPlayer.AccessRectangle.Height).Intersects(myRectangle))
-                    {
-                        aPlayer.AccessVelocity = new Vector2(0, aPlayer.AccessVelocity.Y);  
-                    }
+                    aPlayer.AccessPosition = new Vector2(aPlayer.AccessOldRectangle.Left - 40, aPlayer.AccessPosition.Y);
+                }
+                //Col from right
+                if (aPlayer.AccessOldRectangle.Left > myRectangle.Right && aPlayer.AccessRectangle.Left <= myRectangle.Right)
+                {
+                    aPlayer.AccessPosition = new Vector2(aPlayer.AccessOldRectangle.Right + 40, aPlayer.AccessPosition.Y);
+                }
+                //Col from top
+                if (aPlayer.AccessOldRectangle.Bottom < myRectangle.Top && aPlayer.AccessRectangle.Bottom >= myRectangle.Top)
+                {
+                    aPlayer.AccessPosition = new Vector2(aPlayer.AccessPosition.X, aPlayer.AccessOldRectangle.Top - 10);
+                }
+                //Col from bottom 
+                if (aPlayer.AccessOldRectangle.Top > myRectangle.Bottom && aPlayer.AccessRectangle.Top <= myRectangle.Bottom)
+                {
+                    aPlayer.AccessPosition = new Vector2(aPlayer.AccessPosition.X, myRectangle.Bottom);
                 }
             }
         }

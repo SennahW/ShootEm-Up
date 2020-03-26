@@ -25,6 +25,7 @@
     <File>C:/Programmering/ShootEm'Up/ShootEm-Up/ShootEm'Up/Content/BG.png</File>
     <File>C:/Programmering/ShootEm'Up/ShootEm-Up/ShootEm'Up/Content/Disney's Frozen - Olaf Nose Bump.mp4</File>
     <File>C:/Programmering/ShootEm'Up/ShootEm-Up/ShootEm'Up/Content/Olaf.png</File>
+    <File>C:/Programmering/ShootEm'Up/ShootEm-Up/ShootEm'Up/Content/Sven sittandes.png</File>
   </SourceFiles>
   <DestFiles>
     <File>Tile1</File>
@@ -48,5 +49,6 @@
     <File>Background</File>
     <File>OlafNose</File>
     <File>Olaf</File>
+    <File>Sven.png</File>
   </DestFiles>
 </SourceFileCollection>

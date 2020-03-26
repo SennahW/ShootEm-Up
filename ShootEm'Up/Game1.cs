@@ -20,6 +20,11 @@ namespace ShootEm_Up
         Camera myCamera;
 
         Player myPlayer;
+        Texture2D myOlafTexture;
+
+
+        List<BaseEnemy> myEnemies;
+        Texture2D mySvenTexture;
 
         Texture2D myVideoTexture;
         Video myVideo;
@@ -28,9 +33,6 @@ namespace ShootEm_Up
         TileMap myTileMap;
         Texture2D myBackgroundTexture;
         List<ParallaxingBackground> myBackgroundList;
-        Collisions myCollisions;
-
-        Texture2D myOlafTexture;
 
         public Player AccessPlayer { get => myPlayer; set => myPlayer = value; }
 
@@ -61,16 +63,17 @@ namespace ShootEm_Up
             myVideo = Content.Load<Video>("OlafNose");
             myVideoPlayer = new VideoPlayer();
             myOlafTexture = Content.Load<Texture2D>("Olaf");
+            mySvenTexture = Content.Load<Texture2D>("Sven");
             myPlayer = new Player(myOlafTexture);
             myTileMap = new TileMap(Content.Load<Texture2D>("Tile1"), Content.Load<Texture2D>("Tile2"), Content.Load<Texture2D>("Tile3"), Content.Load<Texture2D>("Tile4"), Content.Load<Texture2D>("Tile5"),
                 Content.Load<Texture2D>("Tile6"), Content.Load<Texture2D>("Tile7"), Content.Load<Texture2D>("Tile8"), Content.Load<Texture2D>("Tile9"), Content.Load<Texture2D>("Tile10"),
                 Content.Load<Texture2D>("Tile11"), Content.Load<Texture2D>("Tile12"), Content.Load<Texture2D>("Tile13"), Content.Load<Texture2D>("Tile14"), Content.Load<Texture2D>("Tile15"),
                 Content.Load<Texture2D>("Tile16"), Content.Load<Texture2D>("Tile17"), Content.Load<Texture2D>("Tile18"));
-            myTileMap.Initialize();
+            myTileMap.Initialize(myEnemies);
             myBackgroundTexture = Content.Load<Texture2D>("Background");
             myBackgroundList = new List<ParallaxingBackground>();
             myBackgroundList.Add(new ParallaxingBackground(myBackgroundTexture, this, new Vector2(0, 0)));
-            myCollisions = new Collisions();
+            myEnemies = new List<BaseEnemy>();
 
             myVideoPlayer.Play(myVideo);
 
@@ -92,6 +95,7 @@ namespace ShootEm_Up
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 myLevel = Level.Two;
+                myTileMap.SwitchMap(myLevel, myEnemies, mySvenTexture);
             }
 
             if (myGameState == GameState.Intro)
@@ -109,7 +113,7 @@ namespace ShootEm_Up
             else if (myGameState == GameState.Running)
             {
                 CheckBackground();
-                myPlayer.Update(gameTime, myGameState, myCollisions.AccessGroundBool);
+                myPlayer.Update(gameTime, myGameState);
 
                 myTileMap.Update(myPlayer, myLevel);
 
