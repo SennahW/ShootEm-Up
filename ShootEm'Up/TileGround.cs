@@ -27,6 +27,13 @@ namespace ShootEm_Up
             {
                 aPlayer.AccessGroundBool = true;
             }
+            for (int i = 0; i < SnowballManager.AccessSnowballList.Count; i++)
+            {
+                if (SnowballManager.AccessSnowballList[i].AccessSnowballRectangle.Intersects(myRectangle))
+                {
+                    SnowballManager.RemoveSnowball(i);
+                }
+            }
         }
     }
-}
+}   

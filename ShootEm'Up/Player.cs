@@ -17,12 +17,15 @@ namespace ShootEm_Up
         bool myJumpingFlag;
         bool myGroundFlag;
         bool mySideColFlag;
+        bool myDirection;
+        bool myShooting;
 
         float vi = 5;
         float t = 100; // vi - initial velocity | t - time
 
         Input myInput;
         KeyboardState myCurrentKey;
+        KeyboardState myOldKey;
 
         Rectangle myRectangle;
         Rectangle myOldRectangle;
@@ -60,6 +63,7 @@ namespace ShootEm_Up
 
         public void Movement(GameTime gameTime)
         {
+            myOldKey = myCurrentKey;
             myCurrentKey = Keyboard.GetState();
             if (myCurrentKey.IsKeyDown(myInput.WalkRight))
             {
@@ -70,7 +74,7 @@ namespace ShootEm_Up
                 myVelocity.X -= 1f * myGameTime;
             }
 
-            if (myCurrentKey.IsKeyDown(myInput.Shoot))
+            if (myCurrentKey.IsKeyDown(myInput.Shoot) && !myOldKey.IsKeyDown(myInput.Shoot))
             {
                 Shoot();
             }
@@ -98,11 +102,20 @@ namespace ShootEm_Up
                 myVelocity.X = 0;
                 mySideColFlag = false;
             }
+
+            if (myRectangle.X < myOldRectangle.X)
+            {
+                myDirection = false;
+            }
+            else if (myRectangle.X > myOldRectangle.X)
+            {
+                myDirection = true;
+            }
         }
 
         public void Shoot()
         {
-            SnowballManager.AddSnowball(new Snowball(true, myPosition));
+            SnowballManager.AddSnowball(new Snowball(myDirection, myPosition));
         }
 
 

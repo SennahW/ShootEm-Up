@@ -22,7 +22,7 @@ namespace ShootEm_Up
         {
             if (myTileType != TileType.Gas)
             {
-                spriteBatch.Draw(myTexture, myPosition, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+                 spriteBatch.Draw(myTexture, myPosition, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
             }
         }
 

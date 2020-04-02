@@ -30,6 +30,12 @@ namespace ShootEm_Up
             mySnowballList.Add(aSnowball);
         }
 
+        public static void RemoveSnowball(int anID)
+        {
+            mySnowballList.RemoveAt(anID);
+        }
+
         public static Texture2D AccessSnowballtexture { get => mySnowballTexture; set => mySnowballTexture = value; }
+        public static List<Snowball> AccessSnowballList { get => mySnowballList; set => mySnowballList = value; }
     }
 }

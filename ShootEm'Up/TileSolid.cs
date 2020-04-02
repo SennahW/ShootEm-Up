@@ -19,6 +19,13 @@ namespace ShootEm_Up
         public override void Update(Player aPlayer, Tile[,] aTileArray)
         {
             TileCollision(aPlayer, aTileArray);
+            for (int i = 0; i < SnowballManager.AccessSnowballList.Count; i++)
+            {
+                if (SnowballManager.AccessSnowballList[i].AccessSnowballRectangle.Intersects(myRectangle))
+                {
+                    SnowballManager.RemoveSnowball(i);
+                }
+            }
         }
 
         public void TileCollision(Player aPlayer, Tile[,] aTileArray)
